@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 200px;
+    transition: 0.5s ease;
+}
+
+header .brand{
+    color: white;
+    font-size: 25px;
+    font-weight: 750;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header .navigation{
+    position: relative;
+}
+
+header .navigation .navigation-items a{
+    position: relative;
+    color: white;
+    font-weight: 550;
+    text-decoration: none;
+    margin: 12px;
+}
+
+header .navigation .navigation-items a:before{
+    content: '';
+    position: absolute;
+    background: white;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s;
+}
+
+header .navigation .navigation-items a:hover:before{
+    width: 100%;
+}
+
+/* Bagian Body */
+
+section{
+    padding: 100px 200px;
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #20594f;
+}
+
+/* Nambel Warna Transparan*/
+.home:before{
+    z-index: 777;
+    content: '';
+    position: absolute;
+    background: rgb(58, 152, 137, 0.3);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.home .content{
+    z-index: 888;
+    color: white;
+    width: 75%;
+    margin-top: 50px;
+    display: none;
+}
+
+.home .content.active{
+    display: block;
+}
+
+.home .content h1{
+    font-size: 65px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+    letter-spacing: 8px;
+    line-height: 65px;
+}
+
+.home .content h1 span{
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.home .content p{
+    margin-bottom: 60px;
+}
+
+.home .content a{
+    background: white;
+    padding: 15px 30px;
+    color: #20594f;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.home .media-icons{
+    z-index: 888;
+    position: absolute;
+    right: 200px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.home .media-icons a{
+    color: white;
+    font-size: 28px;
+    transition: 0.5s ease;
+    margin: 10px;
+}
+
+/* .home .media-icons a:not(:last-child){
+    margin-bottom: 20px;
+} */
+
+.home .media-icons a:hover{
+    transform: scale(1.5)
+}
+
+.home video{
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    transform: translateY(80px);
+}
+
+.slider-navigation .nav-btn{
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(255, 255, 255, 0.5);
+    transition: 2s ease;
+    margin: 10px;
+}
+
+.slider-navigation .nav-btn.active{
+    background:#20594f;
+}
+
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.5em);
+}
+
+
+/* ngatur js transisi pembuka video */
+.video-slide{
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+}
+.video-slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 1.5s ease;
+    transition-property: clip-path;
+}
+/* flex ukuran HP */
+
+@media (max-width: 1040px){
+    header{
+        padding: 12px 20px
+    }
+    section{
+        padding: 100px 20px;
+    }
+
+    .home .media-icons{
+        right: 15px;
+    }
+}
